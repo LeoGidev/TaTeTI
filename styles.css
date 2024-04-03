@@ -13,4 +13,5 @@ canvas {
     border-radius: 10px;
     background-color: rgb(233, 230, 207);
     box-shadow: 3px 3px 4px black;
+    cursor: pointer;
 }
