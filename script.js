@@ -2,7 +2,7 @@ const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 const CELL_SIZE = 100;
 const board = ["", "", "", "", "", "", "", "", ""]; // Representación del tablero
-
+let currentPlayer = "X"; // Agregar una variable para rastrear el jugador actual
 // Dibuja el tablero vacío
 function drawBoard() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -94,11 +94,13 @@ function handleClick(event) {
     if (board[row * 3 + col] === "") {
         const winner = checkWinner();
         if (!winner) {
-            updateBoard(row, col, "X");
+            updateBoard(row, col, currentPlayer);
             const winnerAfterMove = checkWinner();
             if (winnerAfterMove) {
                 alert(winnerAfterMove === "Empate" ? "¡Empate!" : `¡${winnerAfterMove} ha ganado!`);
             }
+            // Cambiar el jugador activo después de cada movimiento
+            currentPlayer = currentPlayer === "X" ? "O" : "X";
         }
     }
 }
