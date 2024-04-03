@@ -14,4 +14,9 @@ canvas {
     background-color: rgb(233, 230, 207);
     box-shadow: 3px 3px 4px black;
     cursor: pointer;
+    transition: 2s;
+}
+canvas:hover{
+    transition: 2z;
+    filter: drop-shadow(0px 0px 30px blue);
 }
