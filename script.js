@@ -3,6 +3,7 @@ const ctx = canvas.getContext("2d");
 const CELL_SIZE = 100;
 const board = ["", "", "", "", "", "", "", "", ""]; // Representación del tablero
 let currentPlayer = "X"; // Agregar una variable para rastrear el jugador actual
+
 // Dibuja el tablero vacío
 function drawBoard() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
